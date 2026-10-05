@@ -1,4 +1,5 @@
 name: Deploy Simulador Semio to GitHub Pages
+# retrigger after enabling Pages
 
 on:
   push:
