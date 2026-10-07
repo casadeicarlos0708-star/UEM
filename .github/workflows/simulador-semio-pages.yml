@@ -1,5 +1,5 @@
 name: Deploy Simuladores UEM to GitHub Pages
-# Mantiene Semio en la raíz y publica Neuro 1.9.1 en una subcarpeta.
+# Mantiene Semio en la raíz y publica los simuladores de Neuro en subcarpetas.
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
     paths:
       - "simulador-semio-mobile/**"
       - "neuro-1-9-1-mobile/**"
+      - "neuro-motor-mobile/**"
       - ".github/workflows/simulador-semio-pages.yml"
   workflow_dispatch:
 
@@ -42,6 +43,8 @@ jobs:
           cp -R simulador-semio-mobile/. _site/simulador-semio-mobile/
           mkdir -p _site/neuro-1-9-1-mobile
           cp -R neuro-1-9-1-mobile/. _site/neuro-1-9-1-mobile/
+          mkdir -p _site/neuro-motor-mobile
+          cp -R neuro-motor-mobile/. _site/neuro-motor-mobile/
 
       - name: Upload simulators
         uses: actions/upload-pages-artifact@v4
